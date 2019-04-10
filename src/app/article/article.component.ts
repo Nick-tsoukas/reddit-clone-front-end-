@@ -13,7 +13,7 @@ export class ArticleComponent implements OnInit {
   }
 
   downvote(){
-    this.article.voteDown()
+    this.article.voteDown();
   }
   constructor() { }
 
