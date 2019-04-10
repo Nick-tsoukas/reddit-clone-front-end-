@@ -1,4 +1,4 @@
-![Alt text](newspaper.png?raw=true "Title")
+![Alt text](smallPaper.png?raw=true "News Paper")
 
 # Reditclone
 
