@@ -1,5 +1,7 @@
-![Alt text](newspaper.png?raw=true "Title")
 
+<div style="text-align:center">
+<img style="width:300px; height:300px; src ="./newspaper.png" />
+</div>
 # Reditclone
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
