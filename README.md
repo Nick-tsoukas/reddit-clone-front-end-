@@ -1,6 +1,12 @@
-![Alt text](smallPaper.png?raw=true "News Paper")
 
-# Reditclone
+<h1 align="center">
+  <br>
+  <img src="https://raw.githubusercontent.com/Nick-tsoukas/reddit-clone-front-end-/blob/master/smallPaper.png" alt="News paper" width="200">
+  <br>
+  # Reditclone
+  <br>
+</h1>
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
 
