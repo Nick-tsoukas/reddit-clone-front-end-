@@ -5,10 +5,8 @@ import { promise } from 'protractor';
 import { resolve } from 'url';
 import {Observable} from 'rxjs';    
 import { ConsoleReporter } from 'jasmine';
+import { environment } from '../environments/environment'
 
-
-
-const baseUrl = "https://newsapi.org";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +18,7 @@ export class ArticleService {
   }
 
   public getArticles(): Promise<Article[]> {
-  return  this.http.get(`${baseUrl}/v2/top-headlines?q=bitcoin&apiKey=c50d1d60659b4f708ff93e0d6f6fee13`)
+  return  this.http.get(`${environment.baseUrl}/v2/top-headlines?q=bitcoin&apiKey=${environment.apiKey}`)
     .toPromise()
     .then( res => {
       console.log(res)
