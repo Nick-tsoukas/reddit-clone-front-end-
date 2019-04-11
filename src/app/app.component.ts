@@ -1,38 +1,5 @@
 import { Component, Input} from '@angular/core';
-
-
-export class Article {
-
-  constructor(
-    public title: string,
-    public description: string,
-    public votes?: number
-  ) {
-    this.votes = votes || 0;
-  }
-
-  public date(): Date {
-    return new Date()
-  }
-  public voteDown():void {
-    this.votes = this.votes - 1;
-  }
-  public voteUp():void {
-    this.votes = this.votes + 1;
-  }
-}
-
-@Component({
-  selector: 'app-sidebar',
-  template: `
-  <div id="sidebar">
-    Sidebar will go here
-  </div>
-  `
-})
-export class SidebarComponent {
-
-}
+import { Article } from './model/article.model';
 
 
 //  app component has the article object .... 
@@ -43,6 +10,11 @@ export class SidebarComponent {
 })
 export class AppComponent {
   articles: Article[];
+
+  //  The App component is responsible for building the articles array 
+  //  The Articles are built in the constructor function 
+  // We will use the @Input decorator to pass this array of Articles to the article list component 
+
 
   constructor() {
 
