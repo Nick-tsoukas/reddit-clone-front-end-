@@ -10,19 +10,22 @@ import { map, shareReplay, tap } from 'rxjs/operators';
   styleUrls: ['./article-list.component.sass']
 })
 export class ArticleListComponent implements OnInit {
-  private articles: Article[];
-
-
+  private articles: Observable<Article[]>;
 
   constructor(private articleService: ArticleService) {
 
   }
 
   ngOnInit() {
-    this.articleService.getArticles()
 
-    this.articleService.getArticles()
-      .then(articles => this.articles = articles);
+    // this.articles = this.articleService._makeHttpRequest()
+    this.articleService._makeHttpRequest()
+    .subscribe(val => {
+      this.articles = val.articles;
+    })
+
+    // this.articleService.getArticles()
+      // .then(articles => this.articles = articles);
   }
 
 }
