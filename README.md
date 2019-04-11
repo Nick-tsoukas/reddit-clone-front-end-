@@ -2,7 +2,7 @@
   <img align="center" src="https://firebasestorage.googleapis.com/v0/b/client-management-111c5.appspot.com/o/smallPaper.png?alt=media&token=dc4fb6ca-0959-4773-9a98-ed24ae7eaa15" alt="News paper" width="200">
 
 
- # Reditclone Built With Angluar 
+ # Bitcoin News Built With Angluar 
 
  ### Notes Input Decorator 
   - The App component is responsible for building the articles array 
