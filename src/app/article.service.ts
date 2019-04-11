@@ -1,45 +1,42 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient  } from '@angular/common/http';
 import { Article } from './model/article.model';
 import { promise } from 'protractor';
 import { resolve } from 'url';
+import {Observable} from 'rxjs';    
+import { ConsoleReporter } from 'jasmine';
+
+
+
+const baseUrl = "https://newsapi.org";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
 
-  constructor(private http: HttpClientModule) {
+  constructor(private http: HttpClient) {
 
   }
 
   public getArticles(): Promise<Article[]> {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve([
-          new Article(
-            'The Angular 2 Screencast',
-            'Learning Angular by building a redit clone with fullstack.io',
-            10
-
-          ),
-          new Article(
-            'The Angular 2 Course Update ',
-            'Building PWAs with angular '
-
-          ),
-          new Article(
-            'Components In Angular',
-            'How to pass data from one component to another'
-
-          ),
-          new Article(
-            'Build Your first Fullstack application with anglur',
-            'Using good firestore to build a serverless appication'
-          ),
-        ])
-      }, 500)
-    },
-    )
+  return  this.http.get(`${baseUrl}/v2/top-headlines?country=us&apiKey=c50d1d60659b4f708ff93e0d6f6fee13`)
+    .toPromise()
+    .then( res => {
+      console.log(res)
+      return res.articles
+    })
+    .then(articles => {
+      const list = articles.map(article => new Article(
+        article.title,
+        article.description,
+        article.urlToImage 
+      ));
+      console.log(list)
+      return list
+    })
+    .catch(err => {
+      console.log(err, `=> we got an error`)
+    })
   }
 }
