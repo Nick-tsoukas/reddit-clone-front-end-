@@ -17,8 +17,8 @@
 ### Notes 
 Creating service for fetching data will allow up to pass data between all components not just child components 
   - lets move the article generation to a service
-  -- When creating services remember to import in the app.module and add in the providers array 
-  --- This makes the service available to all components if needed 
+  - When creating services remember to import in the app.module and add in the providers array 
+  -This makes the service available to all components if needed 
 
 
 
