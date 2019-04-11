@@ -19,9 +19,11 @@ export class ArticleListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.articleService.getArticles()
 
     this.articleService.getArticles()
       .then(articles => this.articles = articles);
   }
 
 }
+
