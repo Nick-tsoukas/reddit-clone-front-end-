@@ -12,12 +12,4 @@ import { ArticleService } from './article.service';
     ArticleService
   ]
 })
-export class AppComponent {
-  articles: Article[];
-
-  constructor(private articleService: ArticleService) {
-
-    this.articles = articleService.getArticles();
-
-  }
-}
+export class AppComponent {}

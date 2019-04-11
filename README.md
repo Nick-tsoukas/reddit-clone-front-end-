@@ -4,7 +4,7 @@
 
  # Reditclone Built With Angluar 
 
- ### Notes 
+ ### Notes Input Decorator 
   - The App component is responsible for building the articles array 
   - The Articles are built in the constructor function 
   - We will use the @Input decorator to pass this array of Articles to the article list component 
@@ -13,6 +13,11 @@
 ``` javascript 
   @Input() articles: Article[];
 ```
+
+### Input Decorator 
+- refactored app and moved the articles from the app component to the app list component 
+- no longer need to use the input decorator at this time 
+
 
 ### Notes 
 Creating service for fetching data will allow up to pass data between all components not just child components 
@@ -57,6 +62,10 @@ export class ArticleService {
 }
 
 ```
+
+### Lifecycle hooks 
+- move method to get articles to ngOnIit and out of the constructor 
+- This Builds articles anytime the article list component gets mounted 
 
 
 
