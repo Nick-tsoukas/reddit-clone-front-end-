@@ -19,7 +19,9 @@ import { ArticleListComponent } from './article-list/article-list.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ArticleService],
+  providers: [
+    ArticleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

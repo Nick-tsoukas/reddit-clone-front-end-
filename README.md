@@ -19,6 +19,44 @@ Creating service for fetching data will allow up to pass data between all compon
   - lets move the article generation to a service
   - When creating services remember to import in the app.module and add in the providers array 
   - This makes the service available to all components if needed 
+  - Also we will add a provider in the app component description objects to make app component the root of the service ... not the app.module file ... Learn why 
+
+### Services
+  - create public method to get articles in service after the constructor function 
+``` javascript 
+export class ArticleService {
+
+  constructor() { 
+
+  }
+
+  public getArticles(){
+    return [
+      new Article(
+        'The Angular 2 Screencast',
+        'Learning Angular by building a redit clone with fullstack.io',
+        10
+
+      ),
+      new Article(
+        'The Angular 2 Course Update ',
+        'Building PWAs with angular '
+
+      ),
+      new Article(
+        'Components In Angular',
+        'How to pass data from one component to another'
+
+      ),
+      new Article(
+        'Build Your first Fullstack application with anglur',
+        'Using good firestore to build a serverless appication'
+      ),
+    ];
+  }
+}
+
+```
 
 
 
