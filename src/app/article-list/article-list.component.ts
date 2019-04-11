@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../model/article.model';
 import { ArticleService } from '../article.service';
+import { Observable } from 'rxjs';
+import { createObservable } from '../common/utils';
+import { map, shareReplay, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-article-list',
@@ -8,15 +11,18 @@ import { ArticleService } from '../article.service';
   styleUrls: ['./article-list.component.sass']
 })
 export class ArticleListComponent implements OnInit {
-private  articles: Article[];
+  private articles: Article[];
 
-constructor(private articleService: ArticleService) {
-  
-}
+
+
+  constructor(private articleService: ArticleService) {
+
+  }
 
   ngOnInit() {
+
     this.articleService.getArticles()
-    .then( articles => this.articles = articles);
+      .then(articles => this.articles = articles);
   }
 
 }

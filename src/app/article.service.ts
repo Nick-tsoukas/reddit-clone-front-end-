@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { Article } from './model/article.model';
 import { promise } from 'protractor';
 import { resolve } from 'url';
@@ -8,7 +9,7 @@ import { resolve } from 'url';
 })
 export class ArticleService {
 
-  constructor() {
+  constructor(private http: HttpClientModule) {
 
   }
 
@@ -37,7 +38,7 @@ export class ArticleService {
             'Using good firestore to build a serverless appication'
           ),
         ])
-      }, 1000)
+      }, 500)
     },
     )
   }
